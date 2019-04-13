@@ -26,13 +26,17 @@
         android:layout_weight="1" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
         android:layout_above="@+id/bottom_info_view"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="false"
+        android:layout_alignTop="@+id/texture"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="542dp"
+        android:layout_marginEnd="0dp"
         android:background="#bb7700"
+        android:gravity="bottom|end"
         android:orientation="vertical"
         android:weightSum="100">
 
@@ -48,91 +52,14 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/null"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_weight="30"
             android:textColor="#FFF"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/bottom_info_view"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:background="#513400"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Threads"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <NumberPicker
-                android:id="@+id/np"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:theme="@style/AppTheme.Picker"
-                android:visibility="visible" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/modelLayout"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="@string/modelLabel"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <ListView
-                android:id="@+id/model"
-                android:layout_width="match_parent"
-                android:layout_height="180dp">
-
-            </ListView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/deviceLayout"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="@string/deviceLabel"
-                android:textAlignment="center"
-                android:textColor="@android:color/white" />
-
-            <ListView
-                android:id="@+id/device"
-                android:layout_width="match_parent"
-                android:layout_height="180dp" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
