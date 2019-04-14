@@ -27,32 +27,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="150dp"
         android:layout_above="@+id/bottom_info_view"
         android:layout_alignTop="@+id/texture"
         android:layout_alignParentStart="false"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="542dp"
+        android:layout_marginTop="581dp"
         android:layout_marginEnd="0dp"
         android:background="#bb7700"
-        android:gravity="bottom|end"
+        android:gravity="end"
         android:orientation="vertical"
         android:weightSum="100">
 
-        <ImageView
-            android:id="@+id/logoview2"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="30"
-            android:scaleType="fitStart"
-            android:src="@drawable/logo" />
+            android:background="@color/selection_focus"
+            android:gravity="center"
+            android:text="AIDog"
+            android:textColor="@color/item_normal"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/null"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
