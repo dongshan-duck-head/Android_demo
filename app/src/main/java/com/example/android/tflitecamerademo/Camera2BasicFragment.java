@@ -132,6 +132,7 @@ public class Camera2BasicFragment extends Fragment
   private String nnApi;
   private String mobilenetV1Quant;
   private String mobilenetV1Float;
+  private String AIDog;
 
 
 
@@ -185,11 +186,11 @@ public class Camera2BasicFragment extends Fragment
   private ArrayList<String> modelStrings = new ArrayList<String>();
 
   /** Current indices of device and model. */
-  int currentDevice = -1;
+  /*int currentDevice = -1;
 
   int currentModel = -1;
 
-  int currentNumThreads = -1;
+  int currentNumThreads = -1;*/
 
   /** An additional thread for running tasks that shouldn't block the UI. */
   private HandlerThread backgroundThread;
@@ -322,18 +323,19 @@ public class Camera2BasicFragment extends Fragment
 
   private void updateActiveModel() {
     // Get UI information before delegating to background
-    final int modelIndex = modelView.getCheckedItemPosition();
-    final int deviceIndex = deviceView.getCheckedItemPosition();
-    final int numThreads = np.getValue();
+
+    /*final int modelIndex = modelView.getCheckedItemPosition();
+    final int deviceIndex = deviceView.getCheckedItemPosition();*/
+    final int numThreads = 5;  //Thread數
 
     backgroundHandler.post(() -> {
-      if (modelIndex == currentModel && deviceIndex == currentDevice
+      /*if (modelIndex == currentModel && deviceIndex == currentDevice
               && numThreads == currentNumThreads) {
         return;
-      }
-      currentModel = modelIndex;
+      }*/
+      /*currentModel = modelIndex;
       currentDevice = deviceIndex;
-      currentNumThreads = numThreads;
+      currentNumThreads = numThreads;*/
 
       // Disable classifier while updating
       if (classifier != null) {
@@ -341,18 +343,16 @@ public class Camera2BasicFragment extends Fragment
         classifier = null;
       }
 
-      // Lookup names of parameters.
-      String model = modelStrings.get(modelIndex);
-      String device = deviceStrings.get(deviceIndex);
+      // Lookup names of parameters.  已寫死
+      String model = AIDog;
+      String device = cpu;
 
       Log.i(TAG, "Changing model to " + model + " device " + device);
 
       // Try to load model.
       try {
-        if (model.equals(mobilenetV1Quant)) {
+        if (model.equals(AIDog)) {
           classifier = new ImageClassifierImageNet(getActivity());
-        } else if (model.equals(mobilenetV1Float)) {
-          classifier = new ImageClassifierFloatMobileNet(getActivity());
         } else {
           showToast("Failed to load model");
         }
@@ -395,8 +395,8 @@ public class Camera2BasicFragment extends Fragment
     // Get references to widgets.
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
     textView = (TextView) view.findViewById(R.id.text);
-    deviceView = (ListView) view.findViewById(R.id.device);
-    modelView = (ListView) view.findViewById(R.id.model);
+    /*deviceView = (ListView) view.findViewById(R.id.device);
+    modelView = (ListView) view.findViewById(R.id.model);*/
 
     // Build list of models
     modelStrings.add(mobilenetV1Quant);
