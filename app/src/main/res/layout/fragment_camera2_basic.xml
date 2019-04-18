@@ -19,6 +19,15 @@
     android:layout_height="match_parent"
     android:background="@color/item_normal">
 
+    <Button
+        android:id="@+id/report"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/warning"
+        android:clickable="true" />
+
     <com.example.android.tflitecamerademo.AutoFitTextureView
         android:id="@+id/texture"
         android:layout_width="match_parent"
@@ -59,12 +68,6 @@
             android:textColor="#FFF"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="緊急通報" />
 
     </LinearLayout>
 

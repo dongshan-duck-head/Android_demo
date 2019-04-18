@@ -21,6 +21,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -61,6 +62,7 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Button;
 import android.support.v13.app.FragmentCompat;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -92,6 +94,7 @@ public class Camera2BasicFragment extends Fragment
   private ImageClassifier classifier;
   private ListView deviceView;
   private ListView modelView;
+  private Button report;
 
 
   /** Max preview width that is guaranteed by Camera2 API */
@@ -315,9 +318,10 @@ public class Camera2BasicFragment extends Fragment
   }
 
   /** Layout the preview and buttons. */
+
+
   @Override
-  public View onCreateView(
-      LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     return inflater.inflate(R.layout.fragment_camera2_basic, container, false);
   }
 
@@ -398,6 +402,7 @@ public class Camera2BasicFragment extends Fragment
     textView = (TextView) view.findViewById(R.id.text);
     deviceView = (ListView) view.findViewById(R.id.device);
     modelView = (ListView) view.findViewById(R.id.model);
+    //report = (Button) view.findViewById(R.id.report);
 
     // Build list of models
     modelStrings.add(mobilenetV1Quant);
@@ -411,6 +416,14 @@ public class Camera2BasicFragment extends Fragment
     }
     deviceStrings.add(nnApi);
 
+//    report.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View v) {
+//        Intent intent = new Intent();
+//        intent.setClass(Camera2BasicFragment.getActivity().getApplicationContext() , MainActivity.class);
+//        startActivity(intent);
+//      }
+//    });
     deviceView.setAdapter(
         new ArrayAdapter<String>(
             getContext(), R.layout.listview_row, R.id.listview_row_text, deviceStrings));
@@ -456,6 +469,7 @@ public class Camera2BasicFragment extends Fragment
   /** Load the model and labels. */
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
+
     super.onActivityCreated(savedInstanceState);
     startBackgroundThread();
   }

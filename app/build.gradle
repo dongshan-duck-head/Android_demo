@@ -106,7 +106,6 @@ task cleanUnusedFiles(type: Delete, dependsOn: ['unzipModelFloat', 'unzipModelQu
     }
 }
 
-
 // Ensure the model file is downloaded and extracted before every build
 preBuild.dependsOn unzipModelFloat
 preBuild.dependsOn unzipModelQuant
@@ -124,4 +123,3 @@ class DownloadUrlTask extends DefaultTask {
         ant.get(src: sourceUrl, dest: target)
     }
 }
-
