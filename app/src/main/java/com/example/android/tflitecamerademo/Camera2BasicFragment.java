@@ -95,6 +95,8 @@ public class Camera2BasicFragment extends Fragment
   private ListView deviceView;
   private ListView modelView;
   private Button report;
+  private static Context mContext;
+
 
 
   /** Max preview width that is guaranteed by Camera2 API */
@@ -402,7 +404,7 @@ public class Camera2BasicFragment extends Fragment
     textView = (TextView) view.findViewById(R.id.text);
     deviceView = (ListView) view.findViewById(R.id.device);
     modelView = (ListView) view.findViewById(R.id.model);
-    //report = (Button) view.findViewById(R.id.report);
+    report = (Button) view.findViewById(R.id.report);
 
     // Build list of models
     modelStrings.add(mobilenetV1Quant);
@@ -415,15 +417,20 @@ public class Camera2BasicFragment extends Fragment
       deviceStrings.add(gpu);
     }
     deviceStrings.add(nnApi);
+    mContext = getActivity().getApplicationContext();
+    report.setOnClickListener(new View.OnClickListener() {
 
-//    report.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View v) {
-//        Intent intent = new Intent();
-//        intent.setClass(Camera2BasicFragment.getActivity().getApplicationContext() , MainActivity.class);
-//        startActivity(intent);
-//      }
-//    });
+      @Override
+      public void onClick(View v) {
+//        Uri uri=Uri.parse("https://forms.gle/EZSEzs8eGsmc3GLt7");
+//        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+//        intent.setClass(Camera2BasicFragment.mContext , MainActivity.class);
+        Intent intent = new Intent();
+        intent.setClass(Camera2BasicFragment.mContext.getApplicationContext() , MainActivity.class);
+        startActivity(intent);
+      }
+    });
+
     deviceView.setAdapter(
         new ArrayAdapter<String>(
             getContext(), R.layout.listview_row, R.id.listview_row_text, deviceStrings));
