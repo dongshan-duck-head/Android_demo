@@ -24,6 +24,10 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.util.Log;
+
+import org.tensorflow.lite.Delegate;
+import org.tensorflow.lite.Interpreter;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -38,15 +42,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import org.tensorflow.lite.Delegate;
-import org.tensorflow.lite.Interpreter;
 
 /**
  * Classifies images with Tensorflow Lite.
  */
 public abstract class ImageClassifier {
   // Display preferences
-  private static final float GOOD_PROB_THRESHOLD = 0.3f;
+  private static final float GOOD_PROB_THRESHOLD = 0.5f;
   private static final int SMALL_COLOR = 0xffddaa88;
 
   /** Tag for the {@link Log}. */
@@ -253,6 +255,7 @@ public abstract class ImageClassifier {
     }
 
     final int size = sortedLabels.size();
+    int accuracy = 0;
     for (int i = 0; i < size; i++) {
       Map.Entry<String, Float> label = sortedLabels.poll();
       SpannableString span =
@@ -261,6 +264,7 @@ public abstract class ImageClassifier {
       // Make it white when probability larger than threshold.
       if (label.getValue() > GOOD_PROB_THRESHOLD) {
         color = android.graphics.Color.WHITE;
+        accuracy++;
       } else {
         color = SMALL_COLOR;
       }
@@ -272,6 +276,7 @@ public abstract class ImageClassifier {
       span.setSpan(new ForegroundColorSpan(color), 0, span.length(), 0);
       builder.insert(0, span);
     }
+    if (accuracy == 0) builder.append("Maybe NOT accuracy!!!\n");
   }
 
   /**
