@@ -78,6 +78,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:background="#513400"
+        android:gravity="bottom|end"
         android:orientation="horizontal"
         android:visibility="gone">
 
