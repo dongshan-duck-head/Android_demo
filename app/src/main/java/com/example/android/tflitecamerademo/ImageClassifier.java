@@ -48,7 +48,7 @@ import java.util.PriorityQueue;
  */
 public abstract class ImageClassifier {
   // Display preferences
-  private static final float GOOD_PROB_THRESHOLD = 0.7f;
+  private static final float GOOD_PROB_THRESHOLD = 0.65f;
   private static final int SMALL_COLOR = 0xffddaa88;
 
   /** Tag for the {@link Log}. */
