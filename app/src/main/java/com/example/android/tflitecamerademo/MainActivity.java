@@ -16,8 +16,6 @@ public class MainActivity extends Activity {
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
         wv.setWebViewClient(new WebViewClient());
-        wv.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSft6o4H995s9UtPHOPM3slwMfmHZNdyF-P-WV4BBGBEWd2Lhw/viewform");
-
-
+        wv.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSfVS5F9Et6s8rCkWwTe5k1PpJ2ZWPKaGt7-fCh7OpuhkZ0WdA/viewform?usp=sf_link");
     }
 }
