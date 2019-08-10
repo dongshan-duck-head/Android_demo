@@ -276,7 +276,7 @@ public abstract class ImageClassifier {
       span.setSpan(new ForegroundColorSpan(color), 0, span.length(), 0);
       builder.insert(0, span);
     }
-    if (accuracy == 0) builder.append("Maybe NOT accuracy!!!\n");
+    if (accuracy == 0) builder.append("Cannot clear identification!!!\n");
   }
 
   /**
