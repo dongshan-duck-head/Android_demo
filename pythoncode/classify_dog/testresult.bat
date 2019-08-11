@@ -1,0 +1,1 @@
+python tensorflow\examples\label_image\label_image.py --graph=classify_dog\output_graph.pb --label=classify_dog\output_labels.txt --image=classify_dog\test.png --input_layer=Placeholder --output_layer=final_result
