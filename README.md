@@ -8,7 +8,7 @@
 * 使用相機辨識遇見的犬隻
 
 ## 紀念圖片
-![測試圖像]https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-01.jpg)
+![測試圖像](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-01.jpg)
 ![比賽](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-02.jpg)
 
 ## 使用技術
