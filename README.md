@@ -1,4 +1,5 @@
 # TF Lite 練習 (2019 SCC 比賽項目)
+*fork from [tensorflow](https://github.com/tensorflow/examples)*
 > 目的動機
 1. 在校園內辨識校園犬及得到新通報新的校園犬加以命名辨識。
 2. 幫助使用者可以易於認識、辨認校園犬。
@@ -7,14 +8,14 @@
 * 使用相機辨識遇見的犬隻
 
 ## 紀念圖片
-![測試圖像](https://imgur.com/krJ05jG.jpg)
-![比賽](https://imgur.com/w0VylkJ.jpg)
+![測試圖像]https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-01.jpg)
+![比賽](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-02.jpg)
 
 ## 使用技術
-![android](https://imgur.com/Dbw9YOq.jpg)
+![android](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-04.jpg)
 
 
-![openCV](https://imgur.com/fIMAaBx.jpg)
+![openCV](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-03.jpg)
 
 ## 程式架構
 
@@ -50,7 +51,7 @@
 
 還有隨便加的button，本來要做出側邊欄，和添加一些遊戲性，最後時間吃緊到直接失敗。
 * 範例圖
-![example](https://imgur.com/VuxNhdt.jpg)
+![example](https://raw.githubusercontent.com/kidneyweakx/img-host/image/image/SCC-05.jpg)
 ## 比賽狀況
 
 1. 別人的作品完整性和跨領域性都很高
